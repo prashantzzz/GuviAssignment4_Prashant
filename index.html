@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>sneakers</h1>
+            <nav id="navbar">
+                <ul>
+                    <li>Collections</li>
+                    <li>Men</li>
+                    <li>Women</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <img src="cart.webp" alt="Cart" class="cart-icon" width="50" onclick="toggleCart()">
+                <img src="user.png" alt="User" class="user-icon" width="50">
+            </div>
+        </header>
+
+        <main class="product" role="main">
+            <div class="product-images">
+                <img src="shoe1.webp" id="mainImage" class="main-image" onclick="openLightbox(0)">
+                <div class="thumbnail-container">
+                    <img src="shoe1.webp" class="thumbnail" onclick="changeImage(0)">
+                    <img src="shoe2.jpg" class="thumbnail" onclick="changeImage(1)">
+                    <img src="shoe3.jpg" class="thumbnail" onclick="changeImage(2)">
+                    <img src="shoe4.jpg" class="thumbnail" onclick="changeImage(3)">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <p class="company-name">SNEAKER COMPANY</p>
+                <h2>Fall Limited Edition Sneakers</h2>
+                <p class="description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+                <p class="price">$125.00 <span class="discount">50%</span></p>
+                <p class="original-price">$250.00</p>
+                <div class="actions">
+                    <div class="quantity">
+                        <button onclick="decrementQuantity()">-</button>
+                        <span id="quantity">0</span>
+                        <button onclick="incrementQuantity()">+</button>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart()">Add to cart</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+        <div class="lightbox-nav">
+            <button class="prev" onclick="changeImage('prev')">&lt;</button>
+            <button class="next" onclick="changeImage('next')">&gt;</button>
+        </div>
+    </div>
+
+    <div id="cart" class="cart">
+        <h3>Cart</h3>
+        <div id="cartItems"></div>
+        <p id="cartTotal"></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
