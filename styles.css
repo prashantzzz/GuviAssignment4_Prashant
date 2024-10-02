@@ -33,6 +33,11 @@ nav ul li:hover {
 .cart-icon {
     margin-right: 20px;
     cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+.cart-icon:hover {
+    transform: scale(1.1); 
 }
 .user-icon {
     border-radius: 50%;
